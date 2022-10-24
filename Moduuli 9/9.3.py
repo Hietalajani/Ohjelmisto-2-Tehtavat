@@ -13,7 +13,7 @@ class Auto:
             self.nopeus = 0
 
     def kulje(self, tunnit):
-        self.matka = abs(tunnit) * self.nopeus
+        self.matka += abs(tunnit) * self.nopeus
 
 
 auto1 = Auto('ABC-123', 142)

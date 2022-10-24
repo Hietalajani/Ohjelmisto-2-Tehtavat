@@ -36,9 +36,6 @@ def main():
             if auto.matka > pisin:
                 pisin = auto.matka
 
-
-
-
     table = []
 
     for auto in autot:
