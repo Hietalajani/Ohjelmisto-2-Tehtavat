@@ -59,6 +59,3 @@ def main():
         if i == 10:
             kilpailu.tulosta_tilanne()
     kilpailu.tulosta_tilanne()
-
-
-main()
