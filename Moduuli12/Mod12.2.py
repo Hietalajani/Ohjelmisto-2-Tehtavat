@@ -7,7 +7,11 @@ paik = input('Anna paikkakunnan nimi: ')
 
 API = 'aa58881d67d7b5251b15873ce3750c23'
 
-geocode = requests.get(f'http://api.openweathermap.org/geo/1.0/direct?q={paik}&limit=5&appid={API}').json()
+try:
+    geocode = requests.get(f'http://api.openweathermap.org/geo/1.0/direct?q={paik}&limit=5&appid={API}').json()
+except requests.exceptions.RequestException as e:
+    print('Hakua ei voitu suorittaa.')
+
 
 lat = geocode[0]['lat']
 lon = geocode[0]['lon']
