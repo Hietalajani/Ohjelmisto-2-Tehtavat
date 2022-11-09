@@ -1,3 +1,5 @@
+'use strict';
+
 function diceroll(sides) {
     return Math.floor(Math.random() * sides + 1)
 }

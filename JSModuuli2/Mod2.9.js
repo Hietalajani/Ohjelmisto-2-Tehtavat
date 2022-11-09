@@ -1,3 +1,5 @@
+'use strict';
+
 const list1 = [2, 5, 29, 8, 18, 24]
 let list2 = []
 

@@ -1,3 +1,5 @@
+'use strict';
+
 let input = 0
 let arr = []
 

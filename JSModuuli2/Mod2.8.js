@@ -1,3 +1,5 @@
+'use strict';
+
 function concat(arr) {
     let sum = ""
     for (let stri of arr) {

@@ -1,3 +1,5 @@
+'use strict';
+
 const nofcandidates = parseInt(prompt('GIVE ME NUMBER OF CANDIDATES'))
 let list = []
 

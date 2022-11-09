@@ -1,3 +1,5 @@
+'use strict';
+
 const numberofparticipants = parseInt(prompt('HOW MANY HOES?'))
 
 let participants = []
