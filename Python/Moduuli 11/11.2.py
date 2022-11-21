@@ -1,4 +1,5 @@
-from Moduuli10 import nimi
+from Python.Moduuli10 import nimi
+
 
 class Sähköauto(nimi.Auto):
     def __init__(self, rekisteritunnus, huippunopeus, kapasiteetti):
