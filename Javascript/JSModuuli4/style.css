@@ -1,4 +1,50 @@
+html {
+    font-family: Verdana, sans-serif;
+}
+
+body {
+    margin: 0;
+
+    text-align: center;
+}
+
+header {
+    background-color: #3ea9dd;
+
+    margin: 0;
+
+    text-align: center;
+
+    height: 10vh;
+}
+
+h1 {
+    line-height: 10vh;
+}
+
 #query {
     display: block;
-    margin-bottom: 0.5rem;
+
+    margin: 1rem auto;
 }
+
+article {
+    width: 60%;
+
+    background-color: darkolivegreen;
+    border: solid 2px black;
+
+    margin: auto;
+}
+
+article p {
+    padding: 1rem;
+}
+
+article img {
+    padding-top: 1rem;
+    margin: 1rem auto;
+
+    display: block;
+}
+
