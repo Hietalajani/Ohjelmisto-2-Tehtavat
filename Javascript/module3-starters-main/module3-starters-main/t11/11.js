@@ -93,37 +93,5 @@ const picArray = [
   },
 ];
 
-// add your code here
-const dialog = document.querySelector('dialog');
-let dialogimg = document.querySelector('dialog img');
 
-for (let i = 0; i < picArray.length; i++) {
-  let article = document.querySelector('#pictures').
-      appendChild(document.createElement('article'));
 
-  article.setAttribute('class', 'card');
-
-  let h2 = article.appendChild(document.createElement('h2'));
-  h2.innerHTML = picArray[i]['title'];
-
-  let figure = article.
-      appendChild(document.createElement('figure'));
-
-  let img = figure.appendChild(document.createElement('img'));
-  img.setAttribute('src', picArray[i]['image']['medium']);
-  img.setAttribute('alt', picArray[i]['title']);
-
-  let figcaption = figure.appendChild(document.createElement('figcaption'));
-  figcaption.innerHTML = picArray[i]['caption'];
-
-  let p = article.appendChild(document.createElement('p'));
-  p.innerHTML = picArray[i]['description'];
-}
-
-const articles = document.querySelectorAll('article');
-
-articles.addEventListener('click', (evt) => {
-
-  dialog.showModal();
-
-});

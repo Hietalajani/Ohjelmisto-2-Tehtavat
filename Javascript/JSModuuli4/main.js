@@ -7,15 +7,16 @@ async function search(input) {
 
   for (let i = 0; i < resp.length; i++) {
 
-    console.log(resp.length);
-    const article = document.body.appendChild(
+    // console.log(resp.length);
+    const article = document.querySelector('main').appendChild(
         document.createElement('article'));
 
     const title = article.appendChild(document.createElement('h2'));
     const image = article.appendChild(document.createElement('img'));
     const link = article.appendChild(document.createElement('a'));
     const summary = article.appendChild(document.createElement('p'));
-    console.log('elementit luotu');
+    const genres = article.appendChild(document.createElement('p'));
+    // console.log('elementit luotu');
 
     link.setAttribute('target', '_blank');
 
@@ -26,15 +27,28 @@ async function search(input) {
       if (e instanceof TypeError) {
         image.src = 'https://via.placeholder.com/100x200';
       }
-      console.log('hei menin tänne');
+      // console.log('hei menin tänne');
     } finally {
-      console.log('pääsin finallyyn sisälle');
+      // console.log('pääsin finallyyn sisälle');
       link.innerText = resp[i].show.url;
 
       if (resp[i].show['summary'] != null) {
         summary.innerHTML = resp[i].show['summary'];
       } else {
         summary.innerText = 'No summary available';
+      }
+
+      if (resp[i]['show']['genres'].length > 0) {
+        for (let a = 0; a < resp[i]['show']['genres'].length; a++) {
+          console.log(resp[i]['show']['genres'][a]);
+          if (resp[i]['show']['genres'].length === 1 ||
+              resp[i]['show']['genres'][a] ===
+              resp[i]['show']['genres'][resp[i]['show']['genres'].length - 1]) {
+            genres.innerHTML += resp[i]['show']['genres'][a];
+          } else {
+            genres.innerHTML += `${resp[i]['show']['genres'][a]} | `;
+          }
+        }
       }
     }
   }
@@ -45,8 +59,10 @@ const button = document.querySelector('#nappi');
 button.addEventListener('click', (e) => {
   e.preventDefault();
 
+  document.querySelector('main').innerHTML = '';
   const input = document.querySelector('#query').value;
 
   search(input);
+
 });
 
