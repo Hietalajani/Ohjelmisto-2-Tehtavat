@@ -26,14 +26,11 @@ header {
     text-align: center;
 
     height: 10vh;
-
-    display: flex;
-    flex-direction: column;
 }
 
 h1 {
     margin: 0;
-    padding-top: 0.3rem;
+    line-height: 10vh;
 }
 
 #query {

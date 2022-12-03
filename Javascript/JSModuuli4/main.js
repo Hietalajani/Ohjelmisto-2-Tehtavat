@@ -14,13 +14,13 @@ async function search(input) {
 
             const title = article.appendChild(document.createElement('h2'));
             const image = article.appendChild(document.createElement('img'));
-            const link = article.appendChild(document.createElement('a'));
+            // const link = article.appendChild(document.createElement('a'));
             const summary = article.appendChild(document.createElement('p'));
             const genres = article.appendChild(document.createElement('p'));
             const dialog = document.body.appendChild(document.createElement('dialog'))
             // console.log('elementit luotu');
 
-            link.setAttribute('target', '_blank');
+            // link.setAttribute('target', '_blank');
 
             title.innerText = resp[i].show.name;
             try {
@@ -32,8 +32,8 @@ async function search(input) {
                 // console.log('hei menin tänne');
             } finally {
                 // console.log('pääsin finallyyn sisälle');
-                link.innerText = resp[i].show.url;
-                link.href = resp[i].show.url;
+                // link.innerText = resp[i].show.url;
+                // link.href = resp[i].show.url;
 
                 if (resp[i].show['summary'] != null) {
                     summary.innerHTML = resp[i].show['summary'];
@@ -53,7 +53,7 @@ async function search(input) {
                         }
                     }
                 }
-                image.addEventListener('click', () => {
+                article.addEventListener('click', () => {
                     const iframe = dialog.appendChild(document.createElement('iframe'));
                     iframe.src = resp[i].show.url;
                     dialog.showModal();
