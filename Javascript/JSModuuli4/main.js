@@ -27,7 +27,7 @@ async function search(input) {
                 image.src = resp[i].show.image.medium;
             } catch (e) {
                 if (e instanceof TypeError) {
-                    image.src = 'https://via.placeholder.com/100x200';
+                    image.src = 'https://via.placeholder.com/200x400';
                 }
                 // console.log('hei menin tänne');
             } finally {
