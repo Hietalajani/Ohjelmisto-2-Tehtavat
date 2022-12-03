@@ -10,12 +10,13 @@ async function search(input) {
     // console.log(resp.length);
     const article = document.querySelector('main').appendChild(
         document.createElement('article'));
-
     const title = article.appendChild(document.createElement('h2'));
     const image = article.appendChild(document.createElement('img'));
     const link = article.appendChild(document.createElement('a'));
     const summary = article.appendChild(document.createElement('p'));
     const genres = article.appendChild(document.createElement('p'));
+    const dialog = document.querySelector('main').
+        appendChild(document.createElement('dialog'));
     // console.log('elementit luotu');
 
     link.setAttribute('target', '_blank');
@@ -50,7 +51,20 @@ async function search(input) {
           }
         }
       }
+
+      article.addEventListener('click', () => {
+        const iframe = dialog.appendChild(document.createElement('iframe'));
+        iframe.src = resp[i].show.url;
+        dialog.showModal();
+
+        const div = dialog.appendChild(document.createElement('div'));
+        div.addEventListener('click', (e) => e.stopPropagation());
+
+        dialog.addEventListener('click', () => dialog.close());
+
+      });
     }
+
   }
 }
 
@@ -63,6 +77,8 @@ button.addEventListener('click', (e) => {
   const input = document.querySelector('#query').value;
 
   search(input);
-
 });
+
+
+
 
