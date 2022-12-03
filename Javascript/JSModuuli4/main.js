@@ -53,7 +53,7 @@ async function search(input) {
                         }
                     }
                 }
-                article.addEventListener('click', () => {
+                image.addEventListener('click', () => {
                     const iframe = dialog.appendChild(document.createElement('iframe'));
                     iframe.src = resp[i].show.url;
                     dialog.showModal();
