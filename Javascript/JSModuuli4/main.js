@@ -67,7 +67,7 @@ async function search(input) {
             }
         }
     } else {
-        document.body.appendChild(document.createElement('p')).innerText = 'No search results found.'
+        document.querySelector('main').appendChild(document.createElement('p')).innerText = 'No search results found.'
     }
 }
 
@@ -80,6 +80,5 @@ button.addEventListener('click', (e) => {
     const input = document.querySelector('#query').value;
 
     search(input);
-
 });
 
